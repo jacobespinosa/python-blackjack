@@ -22,21 +22,6 @@ A command-line Blackjack game built to practice object-oriented programming in P
  - shuffle
  - deal_card
 
-### Player
-
-**Attributes**
- - bankroll
- - hand/hands
- - bet
-
-**Methods**
- - hit
- - stand
- - double_down
- - split
- - place_bet
- - set_bankroll
-
 ### Hand
 
 **Attributes**
@@ -47,15 +32,35 @@ A command-line Blackjack game built to practice object-oriented programming in P
  - add_card
  - is_bust
 
-### Dealer
-Inherits from `Player`.
+### Participant
 
-**Inherited Attributes**
-- hand
+**Attributes**
+ - hand/hands
 
 **Methods**
+ - play_turn
+
+### Player
+Inherits from `Participant`
+
+**Additional Attributes**
+ - bankroll
+ - bet
+
+**Additional/Override Methods**
+ - double_down
+ - split
+ - place_bet
+ - play_turn
+
+### Dealer
+Inherits from `Participant`.
+
+**Additional Attributes**
+- None
+
+**Additional/Override Methods**
 - play_turn
-- reveal_hidden_card
 
 ### BlackjackGame
 
@@ -72,6 +77,7 @@ Inherits from `Player`.
  - player_turn
  - dealer_turn
  - check_winner
+ - reveal_hidden_card
 
 
 

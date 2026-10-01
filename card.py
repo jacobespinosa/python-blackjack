@@ -12,3 +12,6 @@ class Card:
             return int(self.rank)
         else:
             return 10
+
+    def __str__(self) -> str:
+        return f"{self.rank}{self.suit}"
